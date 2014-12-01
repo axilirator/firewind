@@ -14,7 +14,7 @@
     * GNU General Public License for more details.
 
     * You should have received a copy of the GNU General Public License
-    * along with Foobar. If not, see <http://www.gnu.org/licenses/>.
+    * along with FireWind. If not, see <http://www.gnu.org/licenses/>.
     */
 	
 	require_once 'morphyus.php';
