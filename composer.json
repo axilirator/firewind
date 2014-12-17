@@ -1,0 +1,29 @@
+{
+	"name"        : "axilirator/firewind",
+	"description" : "Simple pure PHP site search library",
+	"license"     : "GPL-3.0",
+	"homepage"    : "https://github.com/axilirator/firewind",
+	"version"     : "1.0.0",
+
+	"require"  : {
+		"php"               : ">=5.3.0",
+		"umisoft/phpmorphy" : "dev-master"
+	},
+
+	"autoload" : {
+		"psr-4" : { "Firewind\\" : "src/" }
+	},
+
+	"authors"  : [
+		{
+			"name":     "Яницкий Вадим",
+			"email":    "axilirator@gmail.com",
+			"homepage": "https://github.com/axilirator/",
+			"role":     "Developer"
+		}
+	],
+
+	"support"  : {
+		"issues": "https://github.com/axilirator/firewind/issues"
+	}
+}

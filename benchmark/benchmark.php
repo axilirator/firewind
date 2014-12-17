@@ -1,6 +1,6 @@
 <?php
-	require_once '../src/core.php';
-	$firewind = new firewind;
+	require_once '../vendor/autoload.php';
+	$firewind = new Firewind\core;
 
 	// Читаем исходный текст //
 	$source = file_get_contents( './source.html' );

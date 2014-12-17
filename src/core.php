@@ -16,8 +16,6 @@
     * You should have received a copy of the GNU General Public License
     * along with FireWind. If not, see <http://www.gnu.org/licenses/>.
     */
-	
-	require_once 'morphyus.php';
 
 	class firewind {
 		public  $VERSION = "1.0.0";

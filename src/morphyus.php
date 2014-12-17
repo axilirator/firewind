@@ -17,15 +17,13 @@
     * along with FireWind. If not, see <http://www.gnu.org/licenses/>.
     */
 
-	require_once __DIR__.'/phpmorphy/src/common.php';
-
 	class morphyus {
 		private $phpmorphy     = null;
 		private $regexp_entity = '/&([a-zA-Z0-9]+);/';
 		public  $regexp_word   = '/([a-zа-я0-9]+)/ui';
 
 		function __construct() {
-			$directory            = __DIR__.'/phpmorphy/dicts';
+			$directory            = __DIR__.'/../dicts';
 			$language             = 'ru_RU';
 			$options[ 'storage' ] = PHPMORPHY_STORAGE_FILE;
 
