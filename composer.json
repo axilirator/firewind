@@ -11,7 +11,7 @@
 	},
 
 	"autoload" : {
-		"psr-4" : { "Firewind\\" : "src/" }
+		"psr-4" : { "Firewind\\" : "src" }
 	},
 
 	"authors"  : [

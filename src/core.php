@@ -17,7 +17,26 @@
     * along with FireWind. If not, see <http://www.gnu.org/licenses/>.
     */
 
-	class firewind {
+	namespace Firewind;
+	use stdClass;
+
+	class index {
+		public $words = [];
+		public $count = 0;
+	}
+
+	class index_node {
+		public $count = 1;
+		public $source;
+		public $weight;
+		public $basic;
+
+		public function range() {
+			return $this->weight * $this->count;
+		}
+	}
+
+	class core {
 		public  $VERSION = "1.0.0";
 		private $morphyus;
 
@@ -33,9 +52,8 @@
 		 * @return {object}          Результат индексирования
 		 */
 		public function make_index( $content, $range=1 ) {
-			$index = new stdClass;
+			$index        = new index;
 			$index->range = $range;
-			$index->words = [];
 
 			// Выделение слов из текста //
 			$words = $this->morphyus->get_words( $content );
@@ -46,7 +64,7 @@
 
 				if ( $weight > 0 ) {
 					// Количество слов в индексе //
-					$length = count( $index->words );
+					$length = $index->count;
 
 					// Проверка существования исходного слова в индексе //
 					for ( $i = 0; $i < $length; $i++ ) {
@@ -88,14 +106,13 @@
 
 					// Если в индексе нет ни лемм, ни исходного слова, //
 					// значит пора добавить его //
-					$node = new stdClass;
+					$node = new index_node;
 					$node->source = $word;
-					$node->count  = 1;
-					$node->range  = $range * $weight;
 					$node->weight = $weight;
 					$node->basic  = $lemma;
 
 					$index->words[] = $node;
+					$index->count++;
 				}
 			}
 

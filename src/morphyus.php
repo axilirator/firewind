@@ -17,6 +17,9 @@
     * along with FireWind. If not, see <http://www.gnu.org/licenses/>.
     */
 
+    namespace Firewind;
+    use phpMorphy;
+
 	class morphyus {
 		private $phpmorphy     = null;
 		private $regexp_entity = '/&([a-zA-Z0-9]+);/';
@@ -25,7 +28,7 @@
 		function __construct() {
 			$directory            = __DIR__.'/../dicts';
 			$language             = 'ru_RU';
-			$options[ 'storage' ] = PHPMORPHY_STORAGE_FILE;
+			$options[ 'storage' ] = phpMorphy::STORAGE_FILE;
 
 			// Инициализация библиотеки //
 			$this->phpmorphy      = new phpMorphy( $directory, $language, $options );
